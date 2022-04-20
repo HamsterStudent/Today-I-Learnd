@@ -1,0 +1,683 @@
+<!--@layout(/series/printing/include/printing-layout.html)-->
+<!--@css(/css/swiper.css)-->
+
+
+<!--@css(/hux/css/products.css)-->
+<!--@css(/hux/css/detail-label.css)-->
+<!--@css(/series/printing/css/printing-common.css)-->
+<!--@js(/hux/js/cate.js)-->
+<!--js(/hux/js/detail.js)-->
+<!--@js(/hux/js/detail-label.js)-->
+<!--@css(/hux/css/swiper.css)-->
+<!--@js(/hux/js/getReserve.js)-->
+<!--@js(/hux/js/reserve.js)-->
+<div module="product_detail">
+  <!--css(/css/module/product/detail.css)-->
+  <!--@js(/js/module/product/detail.js)-->
+  <!--@css(/hux/css/detail.css)-->
+  <!--@js(/js/module/product/detail.js)-->
+
+
+  <div id="start"></div>
+
+  <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+  <div class="overview" module="product_image">
+    <!--@js(/js/module/product/image.js)-->
+
+    <!-- 공급사 바로가기버튼 영역 -->
+    <div class="topLogo {$supply_link_display|display}">
+      <span>{$supply_top_logo}</span>
+      <a href="#none" onclick="{$supply_go_action}"><img src="{$supply_go_img}" alt="공급사 바로가기" /></a>
+    </div><!-- 공급사 바로가기버튼 영역 -->
+
+    <div class="prdImgView">
+
+      <!-- 꾸미기 --><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+      <!-- 세일 -->
+      <div class="discount_rate ico02" data-price="{$product_custom}" data-sale="{$product_price}"></div>
+      <!-- 좋아요 -->
+      <div class="-likeButton {$disp_likeprd_class} -mov"><button type="button" class="-mov">{$disp_likeprd_icon}<strong>{$disp_likeprd_count}</strong></button></div>
+
+      <p class="prdImg">
+        <a href="#none" id="prdDetailImg" data-param="{$zoom_param}"><img src="{$big_img}" class="bigImage" alt="{$seo_alt_tag}"></a>
+      </p>
+      <div module="Product_mobileImage">
+        <!--@css(/css/module/product/mobileImage.css)-->
+        <!--
+                        $swipe = yes
+                    -->
+        <ul>
+          <li data-param="{$zoom_param}">
+            <p class="thumbnail">
+              <img src="{$big_img}" class="{$thumb_img_class}" alt="">
+            </p>
+          </li>
+          {$aAddImage}
+        </ul>
+      </div>
+    </div>
+
+    <div class="color {$colorchip_display|display}">
+      <div module="product_Colorchip">
+        <span class="chips" style="background-color:{$color};"></span>
+        <span class="chips" style="background-color:{$color};"></span>
+      </div>
+    </div>
+
+  </div><!-- //참고 -->
+
+  <div class="info">
+
+    <!-- <h1 class="name">{$name}</h1> -->
+    <div class="print-info-wrap">
+
+      <ul class="info-title">
+        <li>형태</li>
+        <li>판형</li>
+        <li>제품 사이즈</li>
+        <li>개수</li>
+        <li>배송 안내</li>
+        <li>배송비</li>
+      </ul>
+
+      <ul class="info-text">
+        <li>사각형</li>
+        <li>A6</li>
+        <li>25x85, 34x13, 22x14 mm</li>
+        <li>총 33피스 (1매 기준)</li>
+        <li>제작 1~2일 및 택배배송 1~2일 소요</li>
+        <li>3,000원 (5만원 이상 주문 시 무료)</li>
+      </ul>
+
+    </div>
+
+
+    <div class="prdInfo" module="product_detaildesign">
+      <!--
+                출력 갯수 지정 변수, 없으면 설정된 전체가 나옵니다.
+                count = 20
+                -->
+      <table border="0" summary="" class="infos">
+        <caption>{$name} 기본 정보</caption>
+        <tbody>
+          <!-- 상품명 -->
+          <tr class="{$item_display|display}" style="display:none;">
+            <th scope="row">{$item_title}</th>
+            <td>{$item_content}</td>
+          </tr>
+          <!-- 판매가 -->
+          <!-- <tr class="{$item_display|display}">
+                            <td class="upper-price">{$item_content}</td>
+                        </tr>
+                        <tr class="{$item_display|display}">
+                            <th>{$item_title}</th>
+                            <td>{$item_content}</td>
+                        </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prdDesc buying-toggle">
+      <div class="option-area">
+        <!-- 클릭시 수량 선택창 -->
+        <div class="prdOption">
+          <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+          <table border="1" summary="">
+            <caption></caption>
+            <tbody module="product_option">
+              <tr class="{$delvtype_display|display}">
+                <th scope="row">배송</th>
+                <td>
+                  <label>{$form.delvtypeA}국내배송</label>
+                  <label>{$form.delvtypeB}해외배송</label>
+                </td>
+              </tr>
+              <tr module="product_addoption">
+                <th scope="row">{$add_option_name}</th>
+                <td>
+                  {$form.add_option}
+                  <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                </td>
+              </tr>
+              <tr module="product_option">
+                <th scope="row">{$option_name}</th>
+                <td>{$form.option}<p class="value">{$option_desc}</p>
+                </td>
+              </tr>
+              <tr class="{$option_push_button_display|display}" id="{$option_push_button_id}">
+                <td colspan="2" class="selectButton"><button type="button" class="btnStrong" onclick="{$action_push_button}">옵션 선택</button></td>
+              </tr>
+              <tr module="product_fileoption">
+                <th scope="row">{$file_option_name}</th>
+                <td class="fileInfo">
+                  {$form.file_option}
+                  <ul class="infoDesc">
+                    <li>- 파일은 최대 5개까지 {$file_option_limit}M 이하로 개별업로드 가능합니다.</li>
+                    <li>- 동일상품이 장바구니에 있을 경우 현재 업로드 되는 파일로 교체됩니다.</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="quantity {$quantity_display|display}">
+                <th scope="row">수량</th>
+                <td>
+                  <img class="{$quantity_up_class}" alt="up" src="/asset/svg-icon/arrow-gray-up.svg" width="25px" style="display:none;">
+                  {$form.quantity}
+                  <img class="{$quantity_down_class}" alt="down" src="/asset/svg-icon/arrow-gray-down.svg" width="25px" style="display:none;">
+                </td>
+              </tr>
+
+            </tbody>
+          </table><!-- //참고 -->
+        </div>
+
+        <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+        <div id="{$total.total_id}" class="{$total.total_display|display}">
+          <table border="1" summary="">
+            <caption>상품 목록</caption>
+            <thead>
+              <tr>
+                <th scope="col">상품 정보</th>
+                <th scope="col">가격</th>
+                <th scope="col">삭제</th>
+              </tr>
+            </thead>
+            <!-- 참고 : 옵션선택 또는 세트상품 선택시 상품이 추가되는 영역입니다. 쇼핑몰 화면에는 아래와 같은 마크업구조로 표시됩니다. 삭제시 기능이 정상동작 하지 않습니다.-->
+            <tbody>
+              <!-- 상품 목록 -->
+            </tbody>
+            <!-- //참고 -->
+            <tfoot>
+              <tr>
+                <td colspan="3"><span class="{$total.total_cnt}"><strong class="price">0</strong></span></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div><!-- //참고 -->
+
+      </div>
+
+      <!-- 참고 : 뉴상품관리 전용 변수가 포함되어 있습니다. 뉴상품관리 이외의 곳에서 사용하면 일부 변수가 정상동작하지 않을 수 있습니다. -->
+      <div module="product_action" id="{$fixed_action_button}">
+        <div class="btnArea type3 {$action_display|display}" style="display:none;">
+          <a href="#none" class="btnSubmit {$buy_display|display}" onclick="{$action_buy}"><span id="{$btn_buy_mobile_id}">바로구매하기</span><span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_id}">예약구매</span></a>
+          <button type="button" class="btnEm {$basket_display|display}" onclick="{$action_basket}" id="actionCart">장바구니</button>
+          <button type="button" class="btnEm {$wishlist_display|display}" onclick="{$action_wishlist}" id="actionWish">관심상품</button>
+        </div>
+        <!-- 네이버 체크아웃 구매 버튼  -->
+        <div id="NaverChk_Button" style="display:none;"></div>
+      </div><!-- //참고 -->
+
+      <!-- 하단 고정 버튼 액션 레이어 -->
+      <div module="product_action" class="fixed" id="orderFixArea">
+        <div class="btnArea type3 {$action_display|display}">
+          <a href="#none" class="btnSubmit {$buy_display|display}"><span id="{$btn_buy_mobile_clone_id}">바로구매하기</span><span class="{$btn_reserve_class|display}" id="{$btn_reserve_mobile_clone_id}">예약구매</span></a>
+          <button type="button" class="btnEm {$basket_display|display}" id="actionCartClone">장바구니</button>
+          <button type="button" class="btnEm {$wishlist_display|display}" id="actionWishClone">관심상품</button>
+        </div>
+        <div id="soldout-area" class="btnArea type3 {$action_soldout_display|display}">
+          <button type="button" class="btnSubmit {$soldout_display|display}">품 절</button>
+          <button type="button" class="btnEm {$wishlist_display|display}" id="actionWishSoldoutClone">관심상품</button>
+        </div>
+      </div><!-- //참고 -->
+
+
+      <!-- 참고 : 뉴상품관리 전용 모듈입니다. 뉴상품관리 이외의 곳에서 사용하면 정상동작하지 않습니다. -->
+      <div class="productSet_toggle2 productSet_toggle" module="product_setproduct">
+        <div class="title">
+          <h2>SET ITEMS</h2><img src="/_wg/img/btn_arrow_off.png" class="DB_btn" alt="온오프버튼" />
+        </div>
+        <div class="DB_banner">
+          <ul>
+            <li class="product">
+              <div class="information">
+                <div class="thumbnail"><a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt=""></a></div>
+                <p class="name">{$product_name} <span class="qty">({$set_quantity}개씩 구매되는 상품)</span></p>
+                <p class="price {$product_price_del}">{$product_price}</p>
+                <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                <p class="{$stock_quantity_display|display}">{$stock_quantity}</p>
+              </div>
+              <div class="option">
+                <table border="1" summary="">
+                  <caption>옵션 정보</caption>
+                  <colgroup>
+                    <col style="width:105px;">
+                    <col style="width:auto;">
+                  </colgroup>
+                  <tbody>
+                    <tr module="product_addoption">
+                      <th scope="row">{$add_option_name}</th>
+                      <td>
+                        {$form.add_option}
+                        <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                      </td>
+                    </tr>
+                    <tr module="product_option">
+                      <th scope="row">{$option_name}</th>
+                      <td>{$form.option}<p class="value">{$option_desc}</p>
+                      </td>
+                    </tr>
+                    <tr module="product_noneoption">
+                      <th scope="row">상품선택</th>
+                      <td>{$form.noneoption}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="sizeGuide {$size_guide_display|display}"><a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a></div>
+            </li>
+            <li class="product">
+              <div class="information">
+                <div class="thumbnail"><a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt=""></a></div>
+                <p class="name">{$product_name} <span class="qty">({$set_quantity}개씩 구매되는 상품)</span></p>
+                <p class="price {$product_price_del}">{$product_price}</p>
+                <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+                <p class="{$stock_quantity_display|display}">{$stock_quantity}</p>
+              </div>
+              <div class="option">
+                <table border="1" summary="">
+                  <caption>옵션 정보</caption>
+                  <colgroup>
+                    <col style="width:105px;">
+                    <col style="width:auto;">
+                  </colgroup>
+                  <tbody>
+                    <tr module="product_addoption">
+                      <th scope="row">{$add_option_name}</th>
+                      <td>
+                        {$form.add_option}
+                        <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                      </td>
+                    </tr>
+                    <tr module="product_option">
+                      <th scope="row">{$option_name}</th>
+                      <td>{$form.option}<p class="value">{$option_desc}</p>
+                      </td>
+                    </tr>
+                    <tr module="product_noneoption">
+                      <th scope="row">상품선택</th>
+                      <td>{$form.noneoption}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="sizeGuide {$size_guide_display|display}"><a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a></div>
+            </li>
+          </ul>
+        </div>
+      </div><!-- //참고 -->
+
+
+      <!-- 추가구성상품 -->
+      <!-- 참고 : 뉴상품관리 전용 모듈입니다. 뉴상품관리 이외의 곳에서 사용하면 정상동작하지 않습니다. -->
+      <div class="productSet_toggle" module="product_addproduct">
+        <div class="title">
+          <h2>추가구성상품</h2><img src="/_wg/img/btn_arrow_off.png" class="DB_btn" alt="온오프버튼" />
+        </div>
+        <div class="DB_banner">
+          <ul>
+            <li class="product">
+              <div class="information">
+                <div class="thumbnail"><a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt=""></a></div>
+                <p class="name">{$product_name}</p>
+                <p class="price {$product_price_del}">{$product_price}</p>
+                <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+              </div>
+              <div class="option">
+                <table border="1" summary="">
+                  <caption>옵션 정보</caption>
+                  <colgroup>
+                    <col style="width:105px;">
+                    <col style="width:auto;">
+                  </colgroup>
+                  <tbody>
+                    <tr module="product_addoption">
+                      <th scope="row">{$add_option_name}</th>
+                      <td>
+                        {$form.add_option}
+                        <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                      </td>
+                    </tr>
+                    <tr module="product_option">
+                      <th scope="row">{$option_name}</th>
+                      <td>{$form.option}<p class="value">{$option_desc}</p>
+                      </td>
+                    </tr>
+                    <tr module="product_noneoption">
+                      <th scope="row">상품선택</th>
+                      <td>{$form.noneoption}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}"><button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button></div>
+            </li>
+            <li class="product">
+              <div class="information">
+                <div class="thumbnail"><a href="/product/detail.html?product_no={$product_no}"><img src="{$product_image}" alt=""></a></div>
+                <p class="name">{$product_name}</p>
+                <p class="price {$product_price_del}">{$product_price}</p>
+                <p class="salePrice {$product_sale_price_display|display}">{$product_sale_price}</p>
+              </div>
+              <div class="option">
+                <table border="1" summary="">
+                  <caption>옵션 정보</caption>
+                  <colgroup>
+                    <col style="width:105px;">
+                    <col style="width:auto;">
+                  </colgroup>
+                  <tbody>
+                    <tr module="product_addoption">
+                      <th scope="row">{$add_option_name}</th>
+                      <td>
+                        {$form.add_option}
+                        <span class="byte" title="현재글자수/최대글자수">[ <strong class="length">0</strong> / {$option_maxlength} ]</span>
+                      </td>
+                    </tr>
+                    <tr module="product_option">
+                      <th scope="row">{$option_name}</th>
+                      <td>{$form.option}<p class="value">{$option_desc}</p>
+                      </td>
+                    </tr>
+                    <tr module="product_noneoption">
+                      <th scope="row">상품선택</th>
+                      <td>{$form.noneoption}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="selectButton {$add_option_push_button_display|display}" id="{$add_option_push_button_id}"><button type="button" class="btnStrong" onclick="{$add_action_push_button}">옵션 선택</button></div>
+            </li>
+          </ul>
+        </div>
+      </div><!-- //참고 -->
+      <!-- //추가구성상품 -->
+
+    </div>
+  </div>
+</div>
+
+<div module="product_additional">
+  <!--@css(/css/module/product/additional.css)-->
+  <!--@css(/css/module/product/additional_animation.css)-->
+  <!--@js(/js/module/product/additional.js)-->
+  <!--@js(/js/module/product/additional_animation.js)-->
+
+  <!-- 상세정보 -->
+  <img id="shinchan-dish-detail" src="/asset/event/lucky/shinchan-detail-ver4.jpg" style="display:none; width=100%;">
+  <div id='event-anchor'></div>
+  <div style="width=100%">
+    <!--@import(/hux/include/weekly-detail.html)-->
+  </div>
+  <div id="prdDetail">
+    <div id="prdDetailContent">{$product_detail}</div>
+
+
+
+    <div class="banner-box big-event detail-moving-card-box">
+
+
+    </div>
+    <!--마지막 배너-->
+    <div class="recommand">
+
+      <a href="/product/detail.html?product_no=3317&cate_no=1&display_group=41">
+        <div class="product">
+          <div class="img-wrapper">
+            <img src="/asset/products/white-dish.jpg" style="width: 222px !important">
+          </div>
+          <div class="product-information">
+            <div class="product-name">
+              짱구는 못말려 흰접시
+            </div>
+            <div class="product-price">
+              9,000원
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <div class="title-box">
+        <div class="title">
+          추천상품
+        </div>
+        <div class="sub-title">
+          짱구는 못말려 식기세트와 함께 사용하면 좋은 제품!
+        </div>
+      </div>
+
+    </div>
+
+
+    <div id="page-sanrio" module="product_relation" style="position:relative; width:95%; margin:auto;">
+      <!--
+              $count = 12
+              $line = 3
+              $grid = 3
+          -->
+      <div class="section-title">
+        <div class="detail-section-title">관련 상품</div>
+        <div class="detail-section-subtitle"></div>
+      </div>
+      <!----------------------------------------------------------------------------------------->
+      <ul class="prdList_main line-3" module="product_relationlist">
+        <li class="prdList_box">
+          <div class="thumbnail">
+
+            <a href="{$link_product_detail}"><img class="prdList_img" src="{$img_small}" alt="{$seo_alt_tag}" class="thumb"><span class="thumbnail-layer"></span></a>
+            <span class="wish">{$list_wish_icon}</span>
+          </div>
+          <div class="information">
+            <p class="name"><a href="/product/detail.html{$param}">{$name}</a></p>
+            <p class="price {$product_sale_strike}">{$disp_product_price}{$product_tax_type_text} <span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>
+            <p class="price {$sale_price_display|display}">{$disp_sale_price}</p>
+            <p class="icon"> {$soldout_icon} {$stock_icon} {$new_icon} {$recommend_icon} {$product_icons}</p>
+            <div class="color {$colorchip_display|display}">
+              <div module="product_Colorchip">
+                <span class="chips" style="background-color:{$color};"></span>
+                <span class="chips" style="background-color:{$color};"></span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="prdList_box">
+          <div class="thumbnail">
+
+            <a href="{$link_product_detail}"><img class="prdList_img" src="{$img_small}" alt="{$seo_alt_tag}" class="thumb"><span class="thumbnail-layer"></span></a>
+            <span class="wish">{$list_wish_icon}</span>
+          </div>
+          <div class="information">
+            <p class="name"><a href="/product/detail.html{$param}">{$name}</a></p>
+            <p class="price {$product_sale_strike}">{$disp_product_price}{$product_tax_type_text} <span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>
+            <p class="price {$sale_price_display|display}">{$disp_sale_price}</p>
+            <p class="icon"> {$soldout_icon} {$stock_icon} {$new_icon} {$recommend_icon} {$product_icons}</p>
+            <div class="color {$colorchip_display|display}">
+              <div module="product_Colorchip">
+                <span class="chips" style="background-color:{$color};"></span>
+                <span class="chips" style="background-color:{$color};"></span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="prdList_box">
+          <div class="thumbnail">
+
+            <a href="{$link_product_detail}"><img class="prdList_img" src="{$img_small}" alt="{$seo_alt_tag}" class="thumb"><span class="thumbnail-layer"></span></a>
+            <span class="wish">{$list_wish_icon}</span>
+          </div>
+          <div class="information">
+            <p class="name"><a href="/product/detail.html{$param}">{$name}</a></p>
+            <p class="price {$product_sale_strike}">{$disp_product_price}{$product_tax_type_text} <span class="{$product_price_ref_display|display}">{$txt_product_price_ref}</span></p>
+            <p class="price {$sale_price_display|display}">{$disp_sale_price}</p>
+            <p class="icon"> {$soldout_icon} {$stock_icon} {$new_icon} {$recommend_icon} {$product_icons}</p>
+            <div class="color {$colorchip_display|display}">
+              <div module="product_Colorchip">
+                <span class="chips" style="background-color:{$color};"></span>
+                <span class="chips" style="background-color:{$color};"></span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- 구매후기 -->
+
+
+
+
+    <!-- 구매안내 -->
+    <div type="button" name="button" class="toggle-button" toggle="prdInfo">구매정보<span class="toggle-arrow">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 210.17 494.16" style="enable-background:new 0 0 210.17 494.16;" xml:space="preserve">
+          <style type="text/css">
+            .st0 {
+              fill: #FFFFFF;
+              stroke: #221815;
+              stroke-width: 8;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-miterlimit: 10;
+            }
+          </style>
+          <polyline class="st0" points="5.57,489.38 203.52,246.75 5.57,4.11 " />
+        </svg>
+
+      </span>
+    </div>
+
+
+    <div class="buyingInfo" id="prdInfo">
+      <div class="infoBox">
+        <div class="infoHeadline">구매 정보</div>
+        <div class="infoText">고액결제의 경우 안전을 위해 카드사에서 확인전화를 드릴 수도 있습니다. 확인과정에서 도난 카드의 사용이나 타인 명의의 주문등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.<br><br>
+          무통장 입금은 상품 구매 대금은 PC뱅킹, 인터넷뱅킹, 텔레뱅킹 혹은 가까운 은행에서 직접 입금하시면 됩니다.<br>주문시 입력한 입금자명과 실제 입금자의 성명이 반드시 일치하여야 하며, 7일 이내로 입금을 하셔야 하며 입금되지 않은 주문은 자동취소 됩니다.</div>
+      </div>
+      <div class="infoBox">
+        <div class="infoHeadline">배송 정보</div>
+        <div class="infoText">배송방법: 택배<br>배송지역: 전국지역<br>배송 비용:2500원(5만원이상 구매시 무료)<br>배송기간: 2일~7일<br>배송안내: 산간벽지나 도서지방은 별도의 추가금액을 지불하셔야 하는 경우가 있습니다.<br>고객님께서 주문하신 상품은 입금 확인후 배송해 드립니다. 다만, 상품종류에 따라서 상품의 배송이 다소 지연될 수 있습니다.</div>
+      </div>
+      <div class="infoBox">
+        <div class="infoHeadline">환불 및 구매정책</div>
+        <div class="infoText">
+          <div class="infoHeadline2">제품 구매시 주의 사항</div>
+          - 제품의 파손(찢어짐, 제품사용불가, 분리)이 아닌, 공뎀(공정상 데미지)은 하자(미세한 도색미스, 봉제선 차이, 얼굴 비대칭, 미세한 얼룩, 실밥 등)으로 인정되지 않습니다. 공뎀을 이유로 환불, 교환, 반품, AS가 불가하다는 점 참고하여 주시기 바랍니다.
+          <div class="infoHeadline2">교환 및 반품이 가능한 경우</div>
+          - 단순 변심에 의한 교환 및 반품은, 왕복 택배비(로젠택배 이용 시 5,000원)를 본인이 부담하셔야 합니다.(색상 교환, 사이즈 교환, 제품 교환 등 포함)<br>
+          - 주문하신 상품과 다른 상품이 잘못 배송된 경우, 저희 더키월드 측에서 배송비를 부담해드리고, 교환 환불 처리해 드립니다.<br>
+          - 상품 수령 후 개봉 전 상품의 하자가 발견된 경우, 즉시 교환/환불 처리해드립니다<br>
+          - 공급받으신 상품의 이해 부족으로 인한 교환/환불의 경우에는 상품을 공급받으신 날로부터 5일이내 단, 제품의 포장 or 상자를 개봉하였거나 포장 or 상자(이)가 훼손되어 상품가치가 상실된 경우에는 절대 교환/반품이 불가능하니 주의해 주시기 바랍니다. <br>
+          - 상품의 교환을 원하신다면 교환은 1회에 한하며, 주문 상품의 판매가가 기존 주문 상품보다 높을 경우 차액을 입금해 주셔야 하고, 반대의 경우에는 차액을 포인트로만 지급해 드립니다.<br>
+          <div class="infoHeadline2">교환 및 반품이 불가능한 경우</div>
+          - 고객님의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우. 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외(단, 제품 고유의 가치를 상실시킬 수 있는 상자 회손은 포함되지 않음)<br>
+          - 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우(예: 상자 개봉 시 택제거 또는 회손, 포장 상자가 아닌 제품 고유의 상자의 훼손 시)<br>
+          - 고객님의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우<br>
+          - 제품 수령 후 5일을 초과한 경우<br>
+          - 초기 불량을 확인하지 못하고 이미 개봉 후 사용 한 제품.<br>
+          - 시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의 가치가 현저히 감소한 경우 (자세한 내용은 1:1 고객만족센터, E-MAIL 또는 카카오톡 상담을 이용해 주시기 바랍니다.)<br>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="pop-up-back buying-toggle">
+      <div class="sticker-preview-close-btn"><img src="/asset/icons/renewal/close_btn.svg" alt=""></div>
+      <div class="sticker-preview-wrap">
+        <div class="sticker-preview-inner">
+          <h2>스티커 만들기</h2>
+          <div class="select-obj-wrap">
+            <h4>왼쪽 아이콘</h4>
+            <div class="select-left-obj">
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+            </div>
+
+            <h4>오른쪽 아이콘</h4>
+            <div class="select-right-obj">
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+              <div class="sticker-obj"></div>
+            </div>
+
+            <h4>스티커 배경</h4>
+            <div class="select-bg-wrap">
+              <div class="sticker-bg"></div>
+              <div class="sticker-bg"></div>
+              <div class="sticker-bg"></div>
+              <div class="sticker-bg"></div>
+              <div class="sticker-bg"></div>
+              <div class="sticker-bg"></div>
+            </div>
+
+            <h4>입력창</h4>
+            <div class="typing-text-wrap">
+              <input type="text" id="sticker" name="sticker" required minlength="4" maxlength="23" size="10">
+            </div>
+          </div>
+
+          <div class="preview-box">
+            <div class="preview-sticker">
+              <p class="preview-sticker-text">
+                <span class="preview-obj-left"></span>
+                우주최강짱짱
+                <span class="preview-obj-right"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+  <div class="bottom-action-area">
+    <div class="basket-action-button-fixed">장바구니</div>
+    <!-- <div class="review-action-button-fixed">리뷰보기<div class="review-count"></div></div> -->
+    <div class="buying-action-button-fixed">
+      <div class="form-box">
+        <div class="form-box-buy">나만의 스티커 만들기</div>
+        <div class="form-box-confirm">주문하기</div>
+      </div>
+      <span class="white-horse-delivery-dec">
+
+
+      </span>
+    </div>
+  </div>
+
+  <div class="bottom-action-area comming-soon-area">
+    <div class="comming-soon-button">
+      상품출시 알림받기
+    </div>
+  </div>
+
+  <!-- 판매자 정보 -->
+  <!--<div class="supplyInfo {$supply_info_display|display}">
+        <h3 module="product_headcategory">판매자 정보</h3>
+        <div class="{$supply_info_display|display}">
+            {$supply_info}
+        </div>
+    </div>-->
+</div>
