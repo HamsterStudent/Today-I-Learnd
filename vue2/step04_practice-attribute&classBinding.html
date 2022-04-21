@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <title>attribute & class binding</title>
+    <style>
+        .color-red{
+            color: red;
+        }
+        .color-blue{
+            color: blue;
+        }
+        .disabled {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+
+        <button :class="{ disabled : isLoading }" @click="toggleClass">Toggle ME</button>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var app = new Vue({
+            
+            el: '#root' , 
+
+            data: {
+
+               isLoading : true
+
+            },
+
+            methods: {
+                toggleClass(){
+                    this.isLoading = false;
+                }
+            }
+
+        });
+
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>attribute & class binding</title>
+    <style>
+        .color-red{
+            color: red;
+        }
+        .color-blue{
+            color: blue;
+        }
+        .is-loading {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+
+        <!-- 타이틀을 연결시키고싶다 뷰의 타이틀 속성에 -->
+        <!-- <button v-on:click="method" v-bind:title="title">Hover Over Me</button> -->
+        <!-- <button @click="method" :title="title">Hover Over Me</button> -->
+
+        <!-- 클래스를 바인딩시키고 싶다면 :를 쓰면 된다 -->
+        <!-- <h1 :class="className">Hello World</h1> -->
+
+        <!-- 버튼의 클래스는 is-loading. class에 isLoading이라는 함수 연결,
+            클릭시에 토글 클래스라는 함수 실행되고 클래스에 지정된 배경색 나옴 -->
+        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle ME</button>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var app = new Vue({
+            
+            // el을 지정해 줘야 내부의 항목들이 알아들을 수 있다.
+            el: '#root' , 
+
+            data: {
+            //    title: 'Now the title is being set through JavaScript',
+
+            //    className: 'color-red',
+
+               isLoading : false
+
+            },
+
+            methods: {
+                toggleClass(){
+                    this.isLoading = true;
+                }
+            }
+
+        });
+
+        
+
+    </script>
+
+</body>
+</html>

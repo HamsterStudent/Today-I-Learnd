@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+
+<head>
+    <title>The Need for Computerd Properties</title>
+    
+</head>
+<body>
+
+    <div id="root">
+
+        <h2>All Tasks</h2>
+
+        <ul>
+            <!-- v-for: 반복문에 사용될 태그 v-if: 불린값을 받아서 판별 v-text: 입력되는 텍스트 -->
+            <!-- <li v-for="task in tasks" v-if="task.completed" v-text="task.description"></li> -->
+
+            <!-- v-for="아이템명 in array" -->
+            
+            <!-- v-text는 innerText속성에 연결됨 {{}}도 같은 역할을 한다. v-html은 innerHtml -->
+
+
+            <li v-for="task in tasks" v-text="task.description"></li>
+
+        </ul>
+        
+        <h2>Incomplete Tasks</h2>
+
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var app = new Vue({
+            
+            el: '#root' , 
+
+            data: {
+
+            //    message: 'Hello World'
+               tasks: [
+                   { description: 'Go to the store', completed: true },
+                   { description: 'Finish screencast', completed: false },
+                   { description: 'Make donation', completed: false },
+                   { description: 'Clear inbox', completed: false },
+                   { description: 'Make dinner', completed: false },
+                   { description: 'Clean room', completed: true },
+               ]
+
+            },
+
+            computed:{
+                
+                incompleteTasks(){
+                    // 테스크들 중에 completed가 false인 것만 내놓아라
+                    return this.tasks.filter(task => ! task.completed);
+
+                    // this.tasks.filter(function(task) {
+                    //     return ! task.completed;
+                    // })
+                }
+               
+
+            }
+
+        });
+
+        
+
+    </script>
+
+</body>
+</html>

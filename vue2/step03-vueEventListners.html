@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Lists</title>
+</head>
+<body>
+
+    <div id="root">
+       <ul>
+           <li v-for="name in names" v-text="name"></li>
+       </ul>
+
+       <!-- input 내에 v-on:keyUp="addName"이벤트를 넣으면 타자 입력시마다 동작하게 됨 -->
+       <input id="input" type="text" v-model="newName">
+       
+       <!-- v-on:click을 @click로도 쓸 수 있음 -->
+       <button @click="addName">Add Name</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                newName: '',
+                names: [ 'ham', 'ster', 'good', 'friend']
+            },
+
+            methods: {
+                addName() {
+                    this.names.push(this.newName)
+
+                    this.newName = '';
+                }
+            },
+
+            // 인스턴스가 마운트 된 이후 호출되는 함수
+        //     mounted(){
+        //         //해당 지정 방식은 여전히 구식임
+        //         document.querySelector('#button').addEventListener('click', ()=>{ //선택자를 찾고
+        //             let name = document.querySelector('#input'); // 이름을 정의하고
+        //             app.names.push(name.value); //벨류를 삽입하고
+        //             name.value = ''; //빈 배열을 만드는 과정이 너무 길다
+        // })
+        //     }
+        })
+
+        
+
+    </script>
+
+</body>
+</html>
