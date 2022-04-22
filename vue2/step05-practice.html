@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+        <h2>오늘 할 일</h2>
+
+        <ul>
+            <li v-for="task in tasks" v-text="task.description"></li>
+        </ul>
+
+        <h2>안한거</h2>
+
+        <ul>
+            <li v-for="task in incompleteTasks" v-text="task.description"></li>
+        </ul>
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var todo = new Vue({
+            el: '#root',
+
+            data: {
+                tasks : [
+                { description: '거실 청소하기', completed: false },
+                { description: '어항 청소하기', completed: true },
+                { description: '물고기 밥주기', completed: true },
+                { description: '식물에 분무하기', completed: true },
+                { description: '책상 정리하기', completed: false },
+                { description: '아이스크림 먹기', completed: false },
+            ]
+            },
+
+            computed:{
+                incompleteTasks(){
+                    return this.tasks.filter( task => ! task.completed );
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

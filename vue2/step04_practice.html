@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Document</title>
+
+    <style>
+        .is-loading{
+            background: salmon;
+            border: dotted 1px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- 페이지 다크모드, 라이트모드 만들 때 사용 https://ordinary-code.tistory.com/102 -->
+
+
+    <div id="root">
+        <button :class="{ 'is-loading': isLoading }" @click="toggleClass">toggle ME</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+
+            el: '#root',
+
+            data: {
+                isLoading : false
+            },
+
+            methods:{
+                toggleClass(){
+                    this.isLoading = true;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root">
+        <task>안녕하세요?</task>
+        <task>햄스터입니다</task>
+        <task>귀여운게좋아</task>
+        <task>햄스터는 귀여워</task>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/step06-main.js"></script>
+
+    <script>
+        Vue.component('task',{
+            templete: '<li><slot></slot></li>',
+        })
+
+        new Vue({
+            el: '#root'
+        })
+    </script>
+    
+</body>
+</html>

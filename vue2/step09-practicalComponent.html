@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
+</head>
+<body>
+    <div id="root" class="container">
+
+        <!-- @hamster 이벤트는 자유롭게 이름을 지을 수 있음. 내가 만든 이벤트! -->
+        <!-- 해당 이벤트는 뷰 컴포넌트의 $emit에서 값을 전달받아 사용하는 이벤트.(클릭시에 햄스터 이벤트 발생) -->
+       <modal v-if="showModal" @hamster="showModal = false">
+           <p>We insert any text here</p>
+       </modal>
+
+       <button @click="showModal = true">Show Modal</button>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./js/step09-main.js"></script>
+
+</body>
+</html>
