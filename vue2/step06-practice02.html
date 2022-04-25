@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>components</title>
+</head>
+<body>
+    <div id="root">
+        <hamster>Go to the store</hamster>
+        <hamster>Go to work</hamster>
+        <hamster>Go to the shop</hamster>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        // 전역 방식
+        // Vue.component('task',{
+        //     template: '<li><slot></slot></li>'
+        // })
+
+        // 변수에 저장
+        // var cmp = {
+        //     template: '<li><slot></slot></li>'
+        // }
+        // new Vue({
+        //     el: '#root',
+
+        //     components: {
+        //         "hamster": cmp
+        //     }
+        // })
+
+        // 지역 타입?
+        new Vue({
+            el: '#root',
+
+            components: {
+                "hamster": {
+                    template: '<li><slot></slot></li>'
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

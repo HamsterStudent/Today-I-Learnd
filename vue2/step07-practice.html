@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+    <title>components</title>
+</head>
+<body>
+
+    <div id="root">
+
+        <task-list></task-list>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        //하위 테스크? task 컴포넌트 하위에 들어감. 이 컴포넌트를 붙여넣어서 만들기
+        Vue.component('task-list',{
+            template: `
+            <div>
+                <task v-for="task in tasks">{{ task.task }}</task>
+            </div>
+            `,
+
+            data(){
+                return {
+                    tasks: [
+                        { task: 'Go to the store', complete: true },
+                        { task: 'Go to the home', complete: false },
+                        { task: 'Go to the b', complete: true },
+                        { task: 'Go to the side', complete: false },
+                    ]
+                }
+            }
+        })
+        //상위 테스크
+        Vue.component('task',{
+            template: '<li><slot></slot></li>',
+        })
+        new Vue({
+            el: '#root'
+        })
+    </script>
+
+
+</body>
+</html>
