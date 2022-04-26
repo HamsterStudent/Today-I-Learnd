@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
+    <style>
+        body{
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="container">
+
+        <hamster title="Hello World" body="Lorem ipsum dolar sit amet."></hamster>
+        <hamster title="Hello universe" body="Bla Bla Bla."></hamster>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        
+        Vue.component('hamster',{
+            props: [ 'title', 'body' ],
+
+            data(){
+                return {
+                    isVisible: true
+                };
+            },
+
+            template: `
+            <article class="message is-primary" v-show="isVisible">
+                <div class="message-header">
+                    {{ title }}
+                    <span class="close" @click="hideModal">X</span>
+                </div>
+                <div class="message-body">
+                    {{ body }}
+                </div>
+            </article>
+            `,
+
+            methods: {
+                hideModal(){
+                    this.isVisible = false;
+                }
+            }
+        })
+
+        new Vue({
+            el: '#root'
+        })
+    </script>
+
+</body>
+</html>
