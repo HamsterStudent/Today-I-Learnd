@@ -21,6 +21,9 @@
             <tab name="About code">
                 <h1>Hello World</h1>
             </tab>
+            <tab name="About book">
+                <h1>book is good friend</h1>
+            </tab>
         </tabs>
     </div>
 
@@ -28,26 +31,72 @@
 
     <script>
 
-        Vue.component('tabs', {
-            templete: `
-            <div class="tabs">
-                <ul>
-                    <li class="is-active"><a>Pictures</a></li>
-                    <li><a>Music</a></li>
-                    <li><a>Videos</a></li>
-                    <li><a>Documents</a></li>
-                </ul>
-            </div>
+        // 얘가 더 자식컴포넌트
+        Vue.component('tabs',{
+            template: `
+                <div>
+                    <div class="tabs">
+                        <ul>
+                        
+                            <li v-for="tab in tabs" :class="{ 'is-active': tab.isActive }">
+                                <a :href="tab.href" @click="selectTab(tab)">{{ tab.name }}</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
 
-            <div class="tabs-details">
-                <slot></slot>
-            </div>
+                    <div class="tabs-details">
+                        <slot></slot>
+                    </div>
+                </div>
             `,
 
-            mounted(){
-                console.log(this.$children)
-            }
+            data(){
+                return { tabs: [] };
+            },
 
+            created(){
+                this.tabs = this.$children;
+            },
+
+            methods: {
+                selectTab(selectedTab){
+                    this.tabs.forEach( tab => {
+                        tab.isActive = ( tab.name == selectedTab.name )
+                        // 탭의 isActive는 탭 네임과 선택된 탭의 이름이 같으면 true다
+                    })
+                }
+            }
+        });
+
+        // 더 부모컴포넌트
+        // 해당 컴포넌트 tabs-details 하단에 들어감
+        Vue.component('tab',{
+            // 각 탭들의 형식은 이렇게 변한다. <div name="탭 이름"><h1>내용</h1></div>
+            template: `
+                <div v-show="isActive"><slot></slot></div>
+            `,
+
+            props: {
+                name: { required: true },
+                selected: { default: false }
+            },
+
+            data() {
+                return {
+                    isActive: false
+                }
+            },
+
+            computed: {
+                href(){
+                    return '#' + this.name.toLowerCase().replace(/ /g, '-') ;
+                }
+            },
+
+            mounted(){
+                this.isActive = this.selected;
+            }
         })
 
         new Vue({
