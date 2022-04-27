@@ -1,0 +1,423 @@
+body{
+    background: #0077D3;
+    background-size: 60px 60px;
+    background-image:
+    linear-gradient(to right, rgb(41, 41, 41) 0.1px, transparent 0.9px),
+    linear-gradient(to bottom, rgb(41, 41, 41) 0.1px, transparent 0.9px);
+}
+div#top_button{
+    width: 70px; height: 70px;
+    border-radius: 35px;
+    font: normal 18px/70px "Roboto"; text-align: center; 
+    background: #F2B705; color: #0077D3; font-weight: 900;
+    position: absolute; bottom: 50px; right: 100px; z-index: 2;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+div#top_button:hover{
+    color: black;
+    background: chartreuse;
+    transition: 0.2s ease;
+}
+
+h1#redraw_logo{
+    width: 239px; height: 56px;
+    position: absolute; left: 50%; top: 70px; margin-left: -119.5px;
+}
+h1#redraw_logo img{
+    width: 100%; background-size: cover;
+}
+div#sub_content_wrap{
+    width: 100%; height: auto; float: left;
+}
+nav#project_info_wrap{
+    width: 100%; height: auto; float: left;
+    position: relative; left: 0px; top: 0px;
+}
+div#project_info_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+    position: relative; left: 0px; top: 0px;
+}
+div#project_info_inner>h1{
+    font: normal 21px "Roboto"; color: white;
+    margin-top: 106px;
+}
+div#project_web_img{
+    width: 1400px; height: 850px; border-radius: 0px 5px 0px 0px;
+    background: url('/log/redraw/images/redraw_web.png')no-repeat; background-size: cover;
+    margin-top: 50px;
+    opacity: 0;
+}
+div#project_mob_img{
+    width: 450px; height: 932.83px;
+    position: absolute; right: 0px;
+    margin-top: 40px;
+    background: url('/log/redraw/images/redraw_mob.png')no-repeat; background-size: cover;
+}
+dl#project_introduce_list{
+    width: 700px; height: 400px; margin-top: 18px;
+    opacity: 0; position: relative; top: 50px;
+}
+.category_title{
+    font: normal 48px "Roboto";
+    color: white;
+    font-weight: 500;
+}
+dd.category_sub_title{
+    font: normal 24px "Roboto"; color: white; font-weight: 400;
+}
+dd.content_text{
+    margin-top: 30px; margin-bottom: 40px;
+    font: normal 14px/24px "Roboto"; color: white; font-weight: 400; letter-spacing: -5%;
+}
+/* 리드로우소개설정 시작 */
+dl#project_introduce_list dd{
+    float: left;
+}
+dd.content_percent{
+    width: 479px; height: 80px;
+}
+ul#content_percent_list{
+    position: relative; left: 0px; top: 0px;
+}
+ul#content_percent_list>li{
+    float: left;
+    position: absolute; left: 0px; top: 0px;
+}
+ul#content_percent_list>li:nth-child(2){
+    top: 30px;
+}
+ul#content_percent_list>li:nth-child(3){
+    top: 60px;
+}
+ul#content_percent_list>li>div{
+    float: left; margin-right: 10px;
+}
+div.percent_title{
+    position: absolute; left: 0px;
+    font-weight: 700; color: white;
+}
+div.active_percent{
+    position: absolute; left: 100px;
+    width: 307px; height: 10px; border-radius: 5px; float: left;
+    background: white; margin-top: 2px;
+}
+div.percent_number{
+    position: absolute; left: 430px; color: white;
+}
+dd.content_text_bold div{
+    float: left; 
+}
+/* 리드로우소개설정 끝 */
+div#project_idea{
+    padding-top: 54px; box-sizing: border-box;
+    width: 100%; height: 474px;
+    opacity: 0; position: relative; top: 50px;
+}
+ul#project_goal_list{
+    width: 100%; height: 500px;
+    float: left;
+    position: relative; top: 50px; opacity: 0;
+}
+ul#project_goal_list li{
+    width: 50%; height: 200px; float: left; margin-top: 20px;
+    text-align: center;
+}
+p.goal_title{
+    font: normal 24px "Roboto"; font-weight: 500; color: white;
+    margin-bottom: 37px;
+}
+p.goal_text{
+    font: normal 16px/24px "Roboto"; color: white;
+}
+/* 리드로우퍼소나설정 시작 */
+div#project_persona_wrap{
+    width: 100%; height: 1100px; float: left; margin-top: 60px;
+    position: relative; top: 50px; opacity: 0;
+}
+div#project_persona_inner{
+    width: 100%; height: 1000px; margin: 0px auto; margin-top: 30px;
+    border: solid 2px white; box-sizing: border-box;
+    padding: 40px;
+}
+ul.project_persona_list{
+    width: 100%; height: 450px; float: left;
+    position: relative; left: 0px; top: 0px;
+}
+ul.project_persona_list:last-child{
+    margin-top: 30px;
+}
+h3.project_persona_people{
+    font: normal 16px "Roboto"; font-weight: 700; color: white;
+    margin-bottom: 40px;
+}
+ul.project_persona_list>li{
+    margin-bottom: 20px;
+}
+ul.project_persona_list>li:nth-child(5){
+    position: absolute; left: 410px; top: 80px;
+}
+ul.project_persona_list>li:nth-child(6){
+    position: absolute; left: 410px; top: 300px;
+}
+ul.project_persona_list>li:last-child{
+    position: absolute; right: 0px; top: 80px;
+}
+p.project_persona_sub_title{
+    font: normal 16px "Roboto"; color: white; font-weight: 500;
+    margin-bottom: 10px;
+}
+.project_persona_text{
+    font: normal 16px/24px "Roboto"; color: white; font-weight: 400;
+    letter-spacing: -1px;
+}
+ul.submenu_content li{
+    margin-top: 20px;
+}
+li.project_persona_graph{
+    width: 540px; height: 150px;
+}
+li.project_persona_graph>div{
+    width: 100%; height: 1px; background: white; margin: 30px auto; float: left;
+}
+li.project_persona_graph>ul>li{
+    width: 108px; height: 24px; float: left;
+    text-align: center;
+    position: relative; left: 0px; top: 0px;
+    font: normal 16px "Roboto"; font-weight: 400; letter-spacing: -1px;
+}
+li.project_persona_graph>ul>li::after{
+    content: "";
+    width: 15px; height: 15px; background: white;
+    position: absolute; left: 50%; top: 30px; margin-left: -7.5px;
+    border-radius: 7.5px;
+}
+ul.graph_top>li:nth-child(2)::after{
+    background: transparent;
+}
+ul.graph_top>li:nth-child(3)::after{
+    background: transparent;
+}
+ul.graph_top>li:last-child::after{
+    background: transparent;
+
+}
+li.project_persona_graph>ul.graph_bottom>li::after{
+    top: -22px;
+}
+ul.graph_bottom>li:first-child::after{
+    background: transparent;
+}
+ul.graph_bottom>li:nth-child(4)::after{
+    background: transparent;
+}
+/* 리드로우퍼소나설정 끝 */
+/* 스토리보드설정 시작 */
+nav#project_storyboard_wrap{
+    width: 100%; height: 1800px; float: left;
+    margin-top: 20px;
+}
+div#project_storyboard_inner{
+    width: 1400px; height: 100%; margin: 0px auto;
+}
+ul#project_storyboard_list{
+    width: 100%; font-size: 0;
+    margin-top: 20px;
+}
+ul#project_storyboard_list>li{
+    width: 32.85%;
+    margin-right: 10px; margin-bottom: 10px;
+    display: inline-block; vertical-align: top;
+    position: relative; top: 100px; opacity: 0;
+}
+ul#project_storyboard_list img{
+    width: 100%;
+    background-size: cover;
+}
+ul#project_storyboard_list li:nth-child(3n){
+    margin-right: 0px;
+}
+/* 스토리보드설정 끝 */
+/* 스타일가이드설정 시작 */
+nav#project_styleguide_wrap{
+    width: 100%; height: 600px; float: left;
+    position: relative; top: 50px; opacity: 0;
+}
+div#project_styleguide_inner{
+    width: 1400px; height: 100%; margin: 0px auto;
+}
+ul#project_styleguide_list{
+    width: 100%; height: auto; margin-top: 30px;
+}
+ul#project_styleguide_list>li{
+    float: left; margin-bottom: 50px;
+}
+ul#project_styleguide_list>li:first-child{
+    width: 100%; font: normal 16px/28px "Roboto"; color: white;
+}
+ul#project_styleguide_list>li:nth-child(2){
+    width: 60%;
+}
+ul#project_styleguide_list>li:nth-child(3){
+    width: 40%;
+    font: normal 16px "Noto Sans KR"; font-weight: 300;
+}
+li.font_sub_title_ko>p:first-child{
+    font-weight: 500; margin-bottom: 10px;
+}
+li.font_sub_title_ko>p:nth-child(2){
+    font-weight: 700;
+}
+li.font_sub_title_ko>p:nth-child(3){
+    font-weight: 500;
+}
+li.font_sub_title_ko>p:last-child{
+    font-weight: 300;
+}
+li.font_sub_title_eng>p{
+    font: normal 16px "Secular One"; font-weight: 500;
+}
+li.font_sub_title_eng>p:first-child{
+    margin-bottom: 10px;
+}
+ul#project_styleguide_list>li:nth-child(4){
+    width: 40%;
+}
+ul#project_styleguide_list>li:last-child{
+    width: 60%;
+}
+div.styleguide_color{
+    width: 120px; height: 120px; float: left; margin-right: 50px;
+    border-radius: 60px; text-align: center; line-height: 120px;
+    box-sizing: border-box; border: solid 2px black;
+    background: lemonchiffon;
+}
+div.blue_color{
+    background: #0077D3;
+}
+div.yellow_color{
+    background: #E2B705;
+}
+div.black_color{
+    background: #000000; color: white;
+}
+div.white_color{
+    background: #FFFFFF;
+}
+
+ul.font_sub_list{
+    width: 100%; height: 120px;
+}
+ul.font_sub_list li{
+    width: 200px; height: 100%;
+    margin-right: 20px;
+    float: left;
+}
+li.styleguide_concept_img{
+    width: 100%;
+}
+li.styleguide_concept_img>img{
+    width: 32.5%; margin-right: 0.5%;
+}
+li.styleguide_concept_img>img:last-child{
+    margin-right:0px;
+}
+/* 스타일가이드설정 끝 */
+/* 코드설정 시작 */
+nav#code_wrap{
+    width: 100%; height: 2500px; float: left;
+}
+div#code_inner{
+    width: 1400px; height: 100%; margin: 0px auto;
+    position: relative; top: 0px; left: 0px;
+}
+ul#code_category_list{
+    width: 100%; height: 2300px;
+    margin-top: 40px;
+}
+ul#code_category_list li{
+    width: 100%; float: left;
+    margin-bottom: 66px;
+    position: relative; left: 0px; top: 0px;
+}
+p.code_category_title{
+    font: normal 24px "Roboto"; color: white; font-weight: 400;
+}
+div.code_visual_img img{
+    width: 100%; display: block; margin: 0px auto;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px 3px rgba(33, 33, 33, 0.25);
+}
+div.code_source_img{
+    width: 690px; height: 120px; float: left;
+    border-radius: 15px;
+    margin-right: 20px;
+    background: url('/log/redraw/images/redraw_markup.png');
+    font: normal 18px/120px "Roboto";
+    color: white; text-indent: 50px;
+    cursor: pointer;
+}
+div.code_source_img:hover{
+    font-weight: 700;
+    box-shadow: 0px 2px 5px 3px rgba(33, 33, 33, 0.25);
+}
+div.code_script_img{
+    width: 690px; height: 120px; float: left;
+    border-radius: 15px;
+    background: url('/log/redraw/images/redraw_JavaScript.png');
+    font: normal 18px/120px "Roboto";
+    color: white; text-indent: 50px;
+    cursor: pointer;
+}
+div.code_script_img:hover{
+    font-weight: 700;
+    box-shadow: 0px 2px 5px 3px rgba(33, 33, 33, 0.25);
+}
+div.float_window_wrap{
+    width: 1048px; height: auto;
+    overflow: auto;
+    position: absolute; top: 0px; left: 50%; margin-left: -524px;
+    border-radius: 15px;
+    background: #000c18;
+    opacity: 0;
+    z-index: 2;
+    display: none;
+    box-shadow: 0px 2px 5px 3px rgba(33, 33, 33, 0.25);
+}
+dl.float_window_inner{
+    width: 100%; height: 100%;
+}
+dl.float_window_inner dt{
+    padding-left: 30px; padding-top: 30px;
+    font: normal 18px "Roboto";
+    color: white;
+}
+
+div.popup_close_btn{
+    position: absolute; top: 30px; right: 30px;
+    cursor: pointer;
+}
+
+
+/* 코드설정 끝 */
+
+
+/* 하단영역설정 시작 */
+footer#sub_footer_wrap{
+    width: 100%; height: 300px; float: left;
+}
+div#sub_footer_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+    position: relative; top: 0px; left: 0px;
+}
+div#sub_footer_inner a{
+    position: absolute; left: 50%; margin-left: -72.45px;
+    line-height: 300px;
+    font: normal 20px/300px "Roboto";
+    color: white;
+    text-decoration: none;
+}
+/* 하단영역설정 끝 */

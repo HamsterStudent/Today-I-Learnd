@@ -1,0 +1,35 @@
+body{
+    height: auto;
+    background: white;
+}
+
+div#contents_wrap{
+    width: 100%; height: auto; float: left;
+}
+nav#contents_inner{
+    width: 90%; margin: 0px auto;
+}
+ul#contents_list{
+    width: 100%;
+}
+ul#contents_list li{
+    width: 100%; float: left; margin-bottom: 10px;
+    position: relative; top: 50px; opacity: 0;
+}
+ul#contents_list li img{
+    width: 100%; background-size: cover;
+}
+
+div#top_button{
+    width: 30%; height: 70px; float: left;
+    border-radius: 35px;
+    font: normal 18px/70px "Roboto"; text-align: center; 
+    background: #f6ca2a; color: #2f7238; font-weight: 900;
+    transition: 0.2s ease;
+    position: relative; left: 50%; margin-left: -15%; top: 70px;
+}
+div#top_button:hover{
+    color: black;
+    background: chartreuse;
+    transition: 0.2s ease;
+}

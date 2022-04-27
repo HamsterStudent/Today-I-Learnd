@@ -1,0 +1,32 @@
+body{
+    height: 7222px;
+    background: #5C7D54;
+    background-size: 60px 60px;
+    background-image:
+    linear-gradient(to right, rgb(41, 41, 41) 0.1px, transparent 0.9px),
+    linear-gradient(to bottom, rgb(41, 41, 41) 0.1px, transparent 0.9px);
+}
+/* 상단메뉴설정 시작 */
+header#header_wrap{
+    width: 100%; height: 150px; float: left;
+    position: fixed; left: 0px; top: 0px;
+}
+div#header_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+    position: relative; left: 0px; top: 0px;
+}
+ul#header_list{
+    width: 75px; height: 80px;
+    position: absolute; left: 0px; bottom: 10px;
+}
+ul#header_list li{
+    font: normal 15px/20px "Roboto"; letter-spacing: -0.5px;
+}
+ul#header_list li a{
+    text-decoration: none; color: black;
+}
+ul#header_list li.selected{
+    font-size: 16px; font-weight: 700;
+}
+/* 상단메뉴설정 끝 */

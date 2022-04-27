@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/log/css/reset.css">
+    <link rel="stylesheet" href="/log/css/sub_common.css">
+    <link rel="stylesheet" href="/log/redraw/css/redraw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <script src="/log/js/redraw.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js' integrity='sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==' crossorigin='anonymous'></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE:DRAW Project</title>
+</head>
+<body>
+    <!-- 상단메뉴 시작 -->
+    <header id="header_wrap">
+        <div id="header_inner">
+            <h1 id="redraw_logo"><img src="/log/redraw/images/redraw_logo.png" alt="리드로우재활용프로젝트"></h1>
+            <ul id="header_list">
+                <li><a href="/log/index.html">HOME</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 상단메뉴 끝 -->
+
+    <!-- 탑버튼 시작 -->
+    <div id="top_button">
+        TOP
+    </div>
+    <!-- 탑버튼 끝 -->
+
+    <!-- 콘텐츠 시작 -->
+    <div id="sub_content_wrap">
+        <nav id="project_info_wrap">
+            <div id="project_info_inner">
+                <div id="project_web_img"></div>
+                <div id="project_mob_img"></div>
+                <h1>UX UI Design</h1>
+                <dl id="project_introduce_list">
+                    <dt class="category_title">RE:DRAW</dt>
+                    <dd class="category_sub_title">CANVAS RECYCLING PROJECT</dd>
+                    <dd class="content_text">
+                        매년 졸업하는 순수 미술 대학생의 수는 2,585명 가량.</br>
+                        인당 최소 3개의 캔버스를 소비한다고 해도 매년 7755개 가량의 캔버스가 소비되고, 폐기됩니다.</br>
+                        캔버스는 일상생활에서 쓰이는 것이 아니라, 특수한 상황에서 쓰이는 소비재이다보니,</br>
+                        제대로 된 분리수거 방법을 숙지하지 못하고 폐기물을 아무렇게나 방치해 두기도 합니다.</br>
+                        캔버스의 분리수거가 제대로 이루어지지 않고 노출된 환경에 작품이 방치될 시에는 추가적으로</br>
+                        환경 오염을 야기할 가능성이 있어, 리드로우는 위 문제를 해결하고자 탄생한 서비스입니다.
+                    </dd>
+                    <dd class="content_percent">
+                        <ul id="content_percent_list">
+                            <li><div class="percent_title">DESIGN</div><div class="active_percent"></div><div class="percent_number">100%</div></li>
+                            <li><div class="percent_title">HTML/CSS</div><div class="active_percent"></div><div class="percent_number">100%</div></li>
+                            <li><div class="percent_title">JavaScript</div><div class="active_percent"></div><div class="percent_number">100%</div></li>
+                        </ul>
+                    </dd>
+                </dl>
+                <div id="project_idea">
+                    <dl id="project_idea_list">
+                        <dt class="category_title">IDEA</dt>
+                        <dd class="content_text">
+                            오랜 시간 동안 자신과 함께 하던 작품을</br>
+                            간소화시켜</br>
+                            다시 한 번 쓸 수 있는 제품으로 만들어 소장할 수 있게</br>
+                            </br>
+                            캔필은 습기나 온도, 압력으로 틀어져 쓸 수 없게 되어 버린</br>
+                            캔버스의 왁구(틀) 부분의 나무를 깎고,</br>
+                            흑연을 넣어 연필을 만듭니다.
+                        </dd>
+                    </dl>
+                </div>
+                <ul id="project_goal_list">
+                    <h2 class="category_title">Goal</h2>
+                    <li>
+                        <p class="goal_title">Visual Design</p>
+                        <p class="goal_text">기존 재활용품 업체와는 결을 달리 하기 위하여</br>정형화된 패턴과 초록색 중심의 디자인을 피하는 것을 목표로 함.</p>
+                    </li>
+                    <li>
+                        <p class="goal_title">User Interface</p>
+                        <p class="goal_text">모바일, PC와 같은 환경에서도 필요한 컨텐츠를 적절히 잘 보기 위해</br>반응형 웹사이트로 사이트를 제작</p>
+                    </li>
+                    <li>
+                        <p class="goal_title">Contents</p>
+                        <p class="goal_text">공공의 이익을 위해 여타 미술 용품의 올바른 폐기 방법을 안내</br>일정량 이상의 폐캔버스는 캔필에 수거신청할 수 있다.</br>수거한 캔버스로 제작한 연필 기부자에게 일부 전달 후 나머지 제품들은</br>웹사이트에 게시하여 판매</p>
+                    </li>
+                    <li>
+                        <p class="goal_title">Service & Marketing</p>
+                        <p class="goal_text">작품을 통째로 보내준 사용자에 한하여 캔필 내에서 자체적으로 작업을 촬영,</br>
+                           아카이빙 형식으로 홈페이지 내에 게시,</br>작업에 담긴 이야기 인터뷰하여 뉴스레터 형식으로 게시 & 미술인 홍보,</br>환경 관련 미술품 담론 뉴스레터 제작,</br>상품 구매 시 환경단체에 전달되는 금액 페이지 제작</p>
+                    </li>
+                </ul>
+                <!-- 리드로우퍼소나 시작 -->
+                <div id="project_persona_wrap">
+                    <h2 class="category_title">User Persona</h2>
+                    <div id="project_persona_inner">
+                        <ul class="project_persona_list">
+                            <h3 class="project_persona_people">전민수<br>미술대학교에 재학하는 20대 대학생</h3>
+                            <li>
+                                <p class="project_persona_sub_title">NEEDS</p>
+                                <p class="project_persona_text">틀어진 캔버스 틀도 재활용하고 싶어요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">PAIN POINT</p>
+                                <p class="project_persona_text">멀쩡한 나무를 그냥 버리자니 찜찜하고 아까워요<br>캔버스 틀을 뜯기 귀찮아요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">GOAL</p>
+                                <p class="project_persona_text">실용성 있는 제품으로 다시 가지고 싶어요<br>재활용이 간편했으면 좋겠어요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">STORY</p>
+                                <p class="project_persona_text">저는 미대생인데 학교 과제가 많아서 캔버스를 구매할 일이 많아요. 작품을 만들고<br>나면 처음엔 버리기가 아까워서 계속 가지고 있게 되는데, 나중에 보면 짐 덩어리<br>더라구요. 제 부스에 더 이상 그림을 둘 공간도 부족하구요. 그래서 필요가 없어진<br>그림은 뜯어서 새 천을 씌워 재활용하거나 하는데, 보관을 잘못 해 둬서 캔버스 나<br>무가 틀어진 것들은 다시 쓸 수가 없어요. 그런 것만 빼면 멀쩡한 나무인데 버리기<br>도 찜찜하구요. 간편하게 이 틀들을 재활용을 할 수 있는 서비스가 있었으면 좋겠<br>어요</p>
+                            </li>
+                            <li class="project_persona_graph">
+                                <p class="project_persona_sub_title">INDIVIDUALITY</p>
+                                <ul class="project_persona_text graph_top">
+                                    <li>환경적이지 않음</li>
+                                    <li>능동적</li>
+                                    <li>불편함 감수</li>
+                                    <li>내향적</li>
+                                    <li>관심 없음</li>
+                                </ul>
+                                <div></div>
+                                <ul class="project_persona_text graph_bottom">
+                                    <li>환경적이지 않음</li>
+                                    <li>수동적</li>
+                                    <li>편의성 중시</li>
+                                    <li>외향적</li>
+                                    <li>업사이클링 관심</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title submenu_content">CONTACT POINT</p>
+                                <ul class="submenu_content">
+                                    <li>
+                                        <p class="project_persona_sub_title">TIME</p>
+                                        <p class="project_persona_text">등하교 시간 / 작업 중 휴식시간</p>
+                                    </li>
+                                    <li>
+                                        <p class="project_persona_sub_title">PLACE</p>
+                                        <p class="project_persona_text">미술대학교 부스 / 로비</p>
+                                    </li>
+                                    <li>
+                                        <p class="project_persona_sub_title">TOGETHER</p>
+                                        <p class="project_persona_text">온라인 활동이 익숙함.<br>학과 사람들 전부가 비슷한 고충을<br>가지고 있음</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="project_persona_list">
+                            <h3 class="project_persona_people">김지형<br>환경 문제에 관심이 많은 30대</h3>
+                            <li>
+                                <p class="project_persona_sub_title">NEEDS</p>
+                                <p class="project_persona_text">업사이클링 물품을 사고 싶어요<br>간단하게 선물할만한 제품이 필요해요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">PAIN POINT</p>
+                                <p class="project_persona_text">기존의 업사이클링 제품들은 대부분 비싸요<br>뜻깊은 의미를 담은 선물을 주고 싶어요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">GOAL</p>
+                                <p class="project_persona_text">적당한 가격의 제품이 있었으면 좋겠어요<br>환경친화적이었으면 좋겠어요</p>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title">STORY</p>
+                                <p class="project_persona_text">저는 환경 문제에 관심이 많아요. 특히 자원이 낭비되는 것은 별로 내키지 않아서<br>업사이클링 제품을 자주 구매하고는 하죠. 그런데 업사이클링 제품들은 가격 단가<br>가 높아 선물용으로 구매하기엔 부담스러워요. 적당하고 실용적이고, 환경을 생각<br>하면서 특별한 이야기가 담겨서, 받는 사람에게 환경 문제에 대한 생각을 유도할<br>수 있을 만한 선물거리가 있었으면 좋겠어요
+                            </li>
+                            <li class="project_persona_graph graph_postion">
+                                <p class="project_persona_sub_title">INDIVIDUALITY</p>
+                                <ul class="project_persona_text graph_top">
+                                    <li>환경적이지 않음</li>
+                                    <li>능동적</li>
+                                    <li>불편함 감수</li>
+                                    <li>내향적</li>
+                                    <li>관심 없음</li>
+                                </ul>
+                                <div></div>
+                                <ul class="project_persona_text graph_bottom">
+                                    <li>환경적이지 않음</li>
+                                    <li>수동적</li>
+                                    <li>편의성 중시</li>
+                                    <li>외향적</li>
+                                    <li>업사이클링 관심</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p class="project_persona_sub_title submenu_content">CONTACT POINT</p>
+                                <ul class="submenu_content">
+                                    <li>
+                                        <p class="project_persona_sub_title">TIME</p>
+                                        <p class="project_persona_text">출퇴근 시간 / 퇴근 후 여가시간</p>
+                                    </li>
+                                    <li>
+                                        <p class="project_persona_sub_title">PLACE</p>
+                                        <p class="project_persona_text">출퇴근 전철 / 회사 점심시간</p>
+                                    </li>
+                                    <li>
+                                        <p class="project_persona_sub_title">TOGETHER</p>
+                                        <p class="project_persona_text">온라인 활동이 익숙함.<br>친구가 많아서 퇴근 후 만나기도 함</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <!-- 리드로우퍼소나 끝 -->
+            </div>
+        </nav>
+        <!-- 스토리보드 시작 -->
+        <nav id="project_storyboard_wrap">
+            <div id="project_storyboard_inner">
+                <h2 class="category_title">Storyboard</h2>
+                <ul id="project_storyboard_list">
+                    <li><img src="/log/redraw/images/storyboard07.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard08.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard09.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard03.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard04.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard06.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard02.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard01.png" alt="리드로우스토리보드메인"></li>
+                    <li><img src="/log/redraw/images/storyboard05.png" alt="리드로우스토리보드메인"></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 스토리보드 끝 -->
+        <!-- 스타일가이드 시작 -->
+        <nav id="project_styleguide_wrap">
+            <div id="project_styleguide_inner">
+                <h2 class="category_title">Style Guide</h2>
+                <ul id="project_styleguide_list">
+                    <li>
+                        <p class="project_persona_sub_title">Concept</p>
+                        <p>버려지는 캔버스의 틀 부분을 연필로 바꾸어 다시 한 번, 뭔가를 창조해 낼 수 있는 힘을 부여하자는 취지의 재활용 프로젝트<br>RE:DRAW</p>
+                    </li>
+                    <li>
+                        <p class="project_persona_sub_title">Color</p>
+                        <div class="styleguide_color blue_color">#0077D3</div>
+                        <div class="styleguide_color yellow_color">#F2B705</div>
+                        <div class="styleguide_color black_color">#000000</div>
+                        <div class="styleguide_color white_color">#FFFFFF</div>
+                    </li>
+                    <li>
+                        <p class="project_persona_sub_title">Font</p>
+                        <ul class="font_sub_list">
+                            <li class="font_sub_title font_sub_title_ko">
+                                <p>Korean</p>
+                                <p>Noto Sans KR Bold</p>
+                                <p>Noto Sans KR Medium</p>
+                                <p>Noto Sans KR Light</p>
+                            </li>
+                            <li class="font_sub_title font_sub_title_eng">
+                                <p>English</p>
+                                <p>Secular One</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="project_persona_sub_title">Logo</p>
+                        <img src="/log/redraw/images/redraw_logo.png" alt="리드로우재활용프로젝트">
+                    </li>
+                    <li class="styleguide_concept_img">
+                        <p class="project_persona_sub_title">Concept Image</p>
+                        <img src="/log/redraw/images/Concept01.jpg" alt="컨셉이미지">
+                        <img src="/log/redraw/images/Concept02.jpg" alt="컨셉이미지">
+                        <img src="/log/redraw/images/Concept03.jpg" alt="컨셉이미지">
+                    </li>
+                </ul>
+            </div> 
+        </nav>
+        <!-- 스타일가이드 끝 -->
+        <!-- 코드 시작 -->
+        <nav id="code_wrap">
+            <div id="code_inner">
+                <h2 class="category_title">Coad</h2>
+                <ul id="code_category_list">
+                    <li>
+                        <p class="code_category_title">#header</p>
+                        <div class="code_visual_img"><img src="/log/redraw/images/redraw_header.png" alt=""></div>
+
+                        <div id="float_window1">
+                            <div class="code_source_img">Markup</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#header - HTML/CSS</dt>
+                                    <dd><img src="/log/redraw/images/header_markup.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <div id="float_window2">
+                            <div class="code_script_img">JavaScript</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#header - JavaScript</dt>
+                                    <dd><img src="/log/redraw/images/header_js.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+                                
+                    </li>
+                    <li>
+                        <p class="code_category_title">#visual</p>
+                        <div class="code_visual_img"><img src="/log/redraw/images/redraw_visual.png" alt=""></div>
+                        
+                        <div id="float_window3">
+                            <div class="code_source_img">MarkUp</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#visual - HTML/CSS</dt>
+                                    <dd><img src="/log/redraw/images/visual_markup.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        
+                        <div id="float_window4">
+                            <div class="code_script_img">JavaScript</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#visual - JavaScript</dt>
+                                    <dd><img src="/log/redraw/images/visual_js.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <p class="code_category_title">#contents</p>
+                        <div class="code_visual_img"><img src="/log/redraw/images/redraw_content.png" alt=""></div>
+
+                        <div id="float_window5">
+                            <div class="code_source_img">MarkUp</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#contents - HTML/CSS</dt>
+                                    <dd><img src="/log/redraw/images/contents_markup.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        
+
+                        <div id="float_window6">
+                            <div class="code_script_img">JavaScript</div>
+                            <div class="float_window_wrap">
+                                <div class="popup_close_btn"><img src="/log/redraw/images/close.png" alt=""></div>
+                                <dl class="float_window_inner">
+                                    <dt>#visual - JavaScript</dt>
+                                    <dd><img src="/log/redraw/images/contents_js.jpg" alt=""></dd>
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- 코드 끝 -->
+    </div>
+    <!-- 콘텐츠 끝 -->
+    <!-- 하단영역 시작 -->
+    <footer id="sub_footer_wrap">
+        <div id="sub_footer_inner">
+            <a href="http://asteroid.dothome.co.kr/redraw/">사이트 바로가기</a>
+        </div>
+    </footer>
+    <!-- 하단영역 끝 -->
+</body>
+</html>

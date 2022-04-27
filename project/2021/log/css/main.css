@@ -1,0 +1,311 @@
+/* 콘텐츠영역설정 시작 */
+div#all_wrap{
+    width: 100%; height: 100%; overflow: hidden;
+}
+div#contents_wrap{
+    width: 400%; height: 100%; float: left;
+    position: fixed; left: 0px; top: 150px;
+    overflow: hidden;
+}
+/* 자기소개영역설정 시작 */
+nav#info_wrap{
+    width: 25%; height: 750px; float: left;
+}
+div#info_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+    background: darkslategrey;
+}
+table#info{
+    width: 100%; height: 400px;
+}
+tr#info_blank{
+    width: 100%; height: 27px;
+}
+tr#info_title{
+    width: 100%; height: 47px;
+}
+tr#info_title td{
+    font: normal 18px "Inconsolata"; font-weight: 500; color: white;
+    text-align: center; line-height: 47px;
+}
+table#info td{
+    border: solid 1px white;
+}
+td#value_list{
+    font: normal 16px/26px "Inconsolata"; font-weight: 300; color: white;
+    text-align: center;
+    box-sizing: border-box; padding-top: 30px;
+}
+td.wide_size{
+    width: 1200px;
+    position: relative; left: 0px; top: 0px;
+}
+
+dl#info_text{
+    width: 1100px;
+    position: absolute; left: 30px; top: 30px;
+}
+/* 타이핑 애니메이션 시작 */
+div.wrapper {
+    display: flex;
+}
+
+div.typing_ani {
+    width: 14ch;
+    animation: typing 1.5s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    font: normal 40px "Inconsolata" ; font-weight: 600;
+    margin-bottom: 10px; color: white;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+/* 타이핑 애니메이션 끝 */
+
+dl#info_text dd{
+    font: normal 14px/20px "Roboto"; font-weight: 400;
+    margin-bottom: 10px; color: white;
+}
+div#info_image{
+    width: 100%; height: 350px; border: solid 1px white; box-sizing: border-box;
+    border-top: none;
+    background: url('/log/images/universe.png'); background-size: cover;
+}
+/* 자기소개영역설정 끝 */
+
+/* 포트폴리오영역설정 시작 */
+nav#portfolio_wrap{
+    width: 25%; height: 750px; float: left;
+}
+div#portfolio_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+    position: relative; left: 0px; top: 0px;
+}
+div#portfolio_asteroid{
+    width: 390px; height: 367.5px; float: left;
+    margin-right: 15px;
+}
+div#portfolio_asteroid img{
+    width: 100%; background-size: cover; padding-top: 20px;
+}
+ul#portfolio_list{
+    width: 100%; height: 100%;
+    position: relative; left: 0px; top: 0px;
+}
+ul#portfolio_list li{
+    width: 390px; height: 176.5px; float: left; margin-bottom: 15px; margin-right: 15px;
+    position: relative;
+    border: solid 2.5px black; box-sizing: border-box;
+    background: rgb(255, 183, 94);
+    cursor: crosshair;
+}
+ul#portfolio_list li a{
+    text-decoration: none;
+}
+ul#portfolio_list li p:hover{
+    font-weight: 500;
+}
+ul#portfolio_list li:nth-child(2){
+    width: 795px;
+    background: url('/log/images/redraw.jpg') no-repeat; background-size: cover;
+}
+ul#portfolio_list li:nth-child(3){
+    width: 795px;
+    background: url('/log/images/pfizerkr.png') no-repeat; background-size: cover;
+}
+ul#portfolio_list li:nth-child(4){
+    width: 795px;
+    background: url('/log/images/kofa.jpg') no-repeat; background-size: cover;
+}
+ul#portfolio_list li:nth-child(5){
+    height: 367.5px; 
+    background: url('/log/images/muiscience.jpg'); background-size: cover;
+}
+ul#portfolio_list li:nth-child(6){
+    width: 185px; height: 100%;
+    margin-right: 0px;
+    position: absolute; right: 0px; top: 0px;
+    background: url('/log/images/ugly_ballet.png'); background-size: cover;
+}
+ul#portfolio_list li:nth-child(7){
+    position: absolute; bottom: 0px; margin-bottom: 0px;
+    background: url('/log/images/binarystar.jpg'); background-size: cover;
+}
+ul#portfolio_list li:nth-child(8){
+    position: absolute; left: 405px; bottom: 0px; margin-bottom: 0px;
+    background: url('/log/images/hamsterexpress.jpg'); background-size: cover;
+}
+ul#portfolio_list>li>a>p{
+    position: absolute; left: 20px; bottom: 0px;
+}
+ul#portfolio_list>li>a>p:nth-child(1){
+    bottom: 30px;
+}
+ul#portfolio_list>li>a>p:nth-child(2){
+    bottom: 10px;
+}
+p.portfolio_category{
+    font: normal 18px "Inconsolata"; font-weight: 500; color: white;
+}
+p.portfolio_title{
+    font: normal 18px "Inconsolata"; font-weight: 200; color: white;
+}
+/* 포트폴리오영역설정 끝 */
+
+/* 툴활용능력설정 시작 */
+nav#about_me_wrap{
+    width: 25%; height: 570px; float: left;
+    position: relative; top: -30px;
+}
+div#about_me_inner{
+    width: 1400px; height: 100%;
+    margin: 0px auto;
+}
+
+.container{
+    width: 100%; height: 570px;
+    position: relative; top: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+.container .card{
+    width: 420px;
+    position: relative;
+    cursor: pointer;
+}
+.container .card .face{
+    width: 100%;
+    height: 300px;
+    transition: 0.5s;
+}
+.container .card .face.face1{
+    position: relative; 
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(150px);
+}
+.container .card:hover .face.face1{
+    background: #B67267;
+    transform: translateY(0);
+}
+.container .card .face.face1 .content{
+    opacity: 0.2;
+    transition: 0.5s;
+}
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+.container .card .face.face1 .content p{
+    margin: 10px 0 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+}
+.container .card .face.face2{
+    position: relative;
+    background: #B67267;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-150px);
+}
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+p.about_me_title{
+    font: normal 24px "Inconsolata"; font-weight: 400; color: black;
+    text-align: center;
+    margin-top: 48px;
+    position: relative; left: 0px; top: 0px;
+}
+
+ul.about_me_tool{
+    width: 100%; height: 220px;
+    position: relative; left: 0px; top: 0px;
+}
+ul.about_me_tool li{
+    width: 370px;
+    margin-bottom: 30px; font: normal 18px "Inconsolata";
+    
+}
+ul.about_me_tool li>div{
+    width: 200px; height: 10px; border-radius: 5px; float: right;
+    border: solid 1px black; box-sizing: border-box;
+    position: relative; left: 0px; top: 0px;
+    margin-top: 4px;
+}
+
+div.percentage_75{
+    width: 150px; height: 8px; border-radius: 4px; float: left;
+    background: black; box-sizing: border-box;
+    position: absolute; left: 0px; top: 0px;
+}
+div.percentage_85{
+    width: 173px; height: 8px; border-radius: 4px; float: left;
+    background: black; box-sizing: border-box;
+    position: absolute; left: 0px; top: 0px;
+}
+div.percentage_60{
+    width: 120px; height: 8px; border-radius: 4px; float: left;
+    background: black; box-sizing: border-box;
+    position: absolute; left: 0px; top: 0px;
+}
+li.about_me_middle_title{
+    margin-top: 50px;
+}
+
+/* 툴활용능력설정 끝 */
+
+/* 컨텍트설정 시작 */
+nav#contact_wrap{
+    width: 25%; height: 750px; float: left;
+}
+div#contact_inner{
+    width: 1400px; height: 100%;
+    position: relative; left: 0px; top: 0px;
+    margin: 0px auto;
+}
+dl#contact_list{
+    width: 318px; height: 300px;
+    position: absolute; left: 50%; top: 50%; margin-left: -159px; margin-top: -150px;
+}
+dl#contact_list dt{
+    font: normal 24px "Inconsolata"; font-weight: 700; color: white;
+    margin-bottom: 30px;
+}
+dl#contact_list dd{
+    font: normal 18px "Inconsolata"; font-weight: 400; color: white;
+    margin-bottom: 20px;
+}
+dl#contact_list button{
+    width: 160px; height: 66px; background: transparent; border: solid 1px white; 
+    text-decoration: none; color: white;
+    cursor: pointer;
+
+}
+/* 컨텍트설정 끝 */
+
+/* 콘텐츠영역설정 끝 */
