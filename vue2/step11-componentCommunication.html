@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>component communication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
+    <style>
+        body { 
+            padding-top: 40px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="root" class="container">
+
+        <coupon @applied="onCouponApplied"></coupon>
+
+        <h1 v-if="couponApplied">You used a coupon</h1>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        
+
+        Vue.component('coupon', {
+            template: '<input placeholder="Enter your coupon" @blur="onCouponApplied">',
+
+            methods: {
+                onCouponApplied(){
+                    this.$emit('applied');
+                }
+            }
+        })
+
+        new Vue({
+            el:'#root',
+
+            data: {
+                couponApplied: false
+            },
+
+            methods: {
+                onCouponApplied(){
+                    this.couponApplied = true;
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
