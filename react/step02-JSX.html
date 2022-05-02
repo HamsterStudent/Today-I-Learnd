@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>react</title>
+</head>
+<body>
+
+
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+
+        const root = document.getElementById("root")
+        
+        // old
+        // const h3 = React.createElement('h3', {
+        //     id : 'title',
+        //     onMouseEnter: () => console.log('mouse enter')
+        // }, 'Hello im a span');
+
+        // new(JSX 방식)
+        const Title = (
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                Hello im a title
+            </h3>
+            );
+
+        // old
+        // const btn = React.createElement("button", {
+        //     onClick : ()=> console.log("im clicked"),
+        //     style: {
+        //         backgroundColor: 'tomato',
+        //         border: 'solid 1px'
+        //     }
+        // }, "Click me");
+
+        // new(JSX 방식)
+        const Button = (
+            <button style={{
+                backgroundColor: "tomato",
+                }} 
+                onClick={()=> console.log("im clicked")}>
+                Click me
+            </button>
+            );
+
+
+        const container = React.createElement('div', null, [Title, Button])
+
+        ReactDOM.render(container, root);
+        
+    </script>
+</body>
+</html>
