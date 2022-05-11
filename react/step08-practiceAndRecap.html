@@ -58,16 +58,16 @@
         }
 
         function KmToMiles(){
-            const [amount, setAmount] = React.useState(0);
-            const [inverted, setInverted] = React.useState(false);
+            const [number, setNumber] = React.useState(0);
+            const [invert, setInvert] = React.useState(false);
 
             const onChange = (event) => {
-                setAmount(event.target.value)
+                setNumber(event.target.value)
             }
-            const reset = () => setAmount(0)
+            const reset = () => setNumber(0)
             const onInvert = () =>{
                 reset();
-                setInverted((current) => !current);
+                setInvert((current) => !current);
             }
 
             return (
@@ -75,27 +75,27 @@
                     <div>
                         <label htmlFor="kilometer">Kilometer</label>
                         <input
-                            value = {inverted ? amount * 1.609 : amount } 
+                            value = {invert ? Math.round(number * 1.609 * 100) / 100  : number } 
                             id = "kilometer"
                             placeholder = "Kilometer"
                             type = "number"            
                             onChange = {onChange}
-                            disabled = {inverted}
+                            disabled = {invert}
                             />
                     </div>
                     <div>
                         <label htmlFor="milse">Miles</label>
                         <input 
-                            value = {inverted ? amount : Math.round(amount / 1.609 * 100) / 100 } 
+                            value = {invert ? number : Math.round(number / 1.609 * 100) / 100 } 
                             id = "miles"
                             placeholder = "Miles"
                             type = "number"            
                             onChange = {onChange}
-                            disabled = {!inverted}
+                            disabled = {!invert}
                             />
                     </div>
                     <button onClick={reset}>Reset</button>
-                    <button onClick={onInvert}>{ inverted ? "Turn back" : "Invert" }</button>
+                    <button onClick={onInvert}>{ invert ? "Turn back" : "Invert" }</button>
                 </div>
             );
         }

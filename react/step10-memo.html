@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>react</title>
+</head>
+<body>
+
+
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+        //컴포넌트는 JSX를 반환하는 어떤 함수일 뿐이다.
+        function Btn({ hamster, hamsterClick }) {
+            console.log(hamster, "was rendered")
+            return (
+                <div>
+                    <button
+                        onClick={hamsterClick} 
+                        style={{
+                            background: "tomato",
+                            color: "white",
+                            padding: "10px 20px",
+                            borderRadius: "10px",
+                            border: "0",
+                            fontSize: 15,
+                    }}>
+                        {hamster}            
+                    </button>
+                </div>
+            )
+            
+        }
+        
+        // 변경되는 부분만 다시 랜더링해달라고 요청
+        const MemorizedBtn = React.memo(Btn)
+
+        function App(){
+            const [value, setValue] = React.useState("Save Change")
+            const changeValue = () => setValue("Revert Changes")
+            return (
+                <div>
+                    <MemorizedBtn hamster={value} hamsterClick={changeValue} />
+                    <MemorizedBtn hamster="Continue" />
+                </div>
+            );
+            
+           
+        }
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
+        
+    </script>
+</body>
+</html>
