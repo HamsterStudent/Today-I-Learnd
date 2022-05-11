@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>react</title>
+</head>
+<body>
+
+
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <script type="text/babel">
+        //컴포넌트는 JSX를 반환하는 어떤 함수일 뿐이다.
+        function Btn({ hamster, cute }) {
+            console.log(hamster, cute)
+            return <button style={{
+                background: "tomato",
+                color: "white",
+                padding: "10px 20px",
+                borderRadius: "10px",
+                border: "0",
+                fontSize: cute ? 18 : 15,
+            }}>
+                {hamster}            
+            </button>
+        }
+        
+        function App(){
+            return (
+                <div>
+                    <Btn hamster="Save Change" cute={true} />
+                    <Btn hamster="Continue" cute={false} />
+                </div>
+            );
+           
+        }
+        const root = document.getElementById("root");
+        ReactDOM.render(<App />, root);
+        
+    </script>
+</body>
+</html>
