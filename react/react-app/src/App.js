@@ -1,70 +1,28 @@
-// // import Button from "./Button";
-// // import styles from "./App.module.css";
-// import {useState, useEffect} from "react";
-
-// function App() {
-//   const [counter, setValue] = useState(0);
-//   const [keyword, setKeaword] = useState("");
-//   const onClick = () => setValue((prev) => prev + 1);
-//   const onChange = (event) => setKeaword(event.target.value);
-//   console.log("I run all the time");
-//   // const iRunOnlyOnce = () => {
-//   //   console.log("I run only once");
-//   // };
-//   useEffect(()=>{  //딱 한번만 실행될 수 있게 해줌. 맨날랜더링하지않구....
-//     console.log("I run only once.");
-//   }, []);
-//   useEffect(()=>{
-//     console.log("I run when 'keyword' changes");
-//   }, [keyword]); //keyword가 변화했을 때만 실행하라고 알리는... 값이 변화했을 때 실행시키고 싶은 부분을 []안에 적으면 됨
-//   useEffect(()=>{
-//     console.log("I run when 'counter' changes");
-//   }, [counter]);
-//   useEffect(()=>{
-//     console.log("I run when 'counter' & 'keyword' changes");
-//   }, [counter, keyword]);
-//   return (
-//     <div>
-//       {/* <h2 className={styles.title}>Welcome back React!!!</h2>
-//       <Button text={"Click me"}/> */}
-      
-//       <input value={keyword} onChange={onChange} type="text" placeholder="Search here..." />
-//       <h1>{counter}</h1>
-//       <button onClick={onClick}>click me</button>
-//     </div>
-
-//   );
-// }
-
-// export default App;
-
 import { useState, useEffect } from "react";
 
-function Hello(){
-
-  // useEffect(()=>{
-  //   console.log("hi :)");
-  //   return() => console.log("bye :(");
-  // });
-  useEffect(()=>{
-    console.log("hi :)");
-    return function(){
-      console.log("bye")
-    }
-  }, []);
-  return <h1>Hello</h1>;
-}
-
 function App(){
-  const [showing, setShowing] = useState(false);
-  const onClick = () => setShowing((prev) => !prev);
-
+  const [toDo, setTodo] = useState("");
+  const [toDos, setTodos] = useState([]);
+  const onChange = (event) => setTodo(event.target.value);
+  const onSubmit = (event) => { 
+    event.preventDefault(); // submit 이벤트를 막음.
+    if(toDo === ""){ // todo가 비어있으면 함수 작동하지 않도록 return
+      return;
+    }
+    setTodo(""); // todo를 빈칸으로 만드는 동작
+    // state는 직접적으로 수정 불가능함. ex)toDo ="" 로는 안됨.
+    setTodos(currentArray => [toDo, ...currentArray]); // 점 세개를 찍으면 배열 안에 항목을 추가할 수 있게 됨
+  };
+  console.log(toDos);
   return (
-  <div>
-    {showing ? <Hello /> : null}
-    <button onClick = {onClick}>{showing ? "Hide" : "Show"}</button>
-  </div>
+    <div>
+      <h1>My To Dos ({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do..."  />
+        <button>Add To Do</button>
+      </form>
+    </div>
   );
-};
+}
 
 export default App;
