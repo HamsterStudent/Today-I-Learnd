@@ -21,8 +21,15 @@ function App(){
         <input onChange={onChange} value={toDo} type="text" placeholder="Write your to do..."  />
         <button>Add To Do</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((item, index) => (
+        <li key={index}>{item}</li>
+        ))} 
+      </ul>
     </div>
   );
+  // map는 자바스크립트 함수. 하나의 array에 있는 item을 내가 원하는 걸로 바꿔주는 역할
 }
 
 export default App;
