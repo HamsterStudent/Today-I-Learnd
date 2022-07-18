@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>react</title>
+
+</head>
+
+<body>
+
+    <!-- 바닐라 스크립트 -->
+
+    <!-- <span>Total clicks: 0</span>
+    <button id="btn">Click me</button> -->
+
+    <div id="root"></div>
+
+
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        const root = document.getElementById("root")
+        const h3 = React.createElement("h3", {
+            onMouseEnter: ()=> console.log('mouse enter'),
+        }, "Hamster"); // 이렇게 등록하면 HTML에서 보이지 않음. 와아~ 짱이네~
+        const btn = React.createElement("button", {
+            onClick: ()=> console.log("Im clicked"),
+            style: {
+                background: "tomato",
+            },
+        }, "Click Me"); // 프로퍼티에 이벤트리스너를 등록할 수 있다
+        const container = React.createElement("div", null, [h3, btn])
+        ReactDOM.render(container, root)  // render는 사용자에게 보여준다는 뜻. span을 root안에 랜더해주어라 
+        // React먼저, HTML나중에
+
+    </script>
+
+
+
+</body>
+</html>

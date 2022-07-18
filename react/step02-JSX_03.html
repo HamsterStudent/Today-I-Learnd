@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>react</title>
+
+</head>
+
+<body>
+
+    <!-- 바닐라 스크립트 -->
+
+    <!-- <span>Total clicks: 0</span>
+    <button id="btn">Click me</button> -->
+
+    <div id="root"></div>
+
+
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        const root = document.getElementById("root")
+
+        // 기존 코드
+        // const h3 = React.createElement("h3", {
+        //     onMouseEnter: ()=> console.log('mouse enter'),
+        // }, "Hamster");
+
+        // JSX 코드
+        function Title(){
+           return(
+            <h3 id="title" onMouseEnter={()=> console.log("mouse enter")}>Hello I'm a title</h3>
+           );
+        }
+            
+        const Button =()=>(
+            <button style={{backgroundColor: "tomato"}} onClick={()=> console.log("im clicked")}>Click me</button>
+        ) 
+
+        const Container = <div><Title /><Button /></div>
+        ReactDOM.render(Container, root) 
+
+    </script>
+
+
+
+</body>
+</html>
